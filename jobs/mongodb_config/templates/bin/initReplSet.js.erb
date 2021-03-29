@@ -1,0 +1,15 @@
+var replSet_hosts = ["<%= p('configsvr_hosts').join("\",\"")%>"]; // first host is master.
+var port = <%= p('mongodb.port')%>;
+var replSetName = "configRepl";
+var config = {_id:replSetName, configsvr: true, members:[] };
+
+for (var i = 0; i < replSet_hosts.length; i++ ) {
+  config['members'].push({"_id" : i, "host" : replSet_hosts[i]+":"+port })
+}
+
+db.auth("<%= p('mongodb.user')%>","<%= p('mongodb.passwd')%>");
+
+rs.initiate(config);
+rs.conf();
+
+quit();

@@ -20,19 +20,23 @@ for (( i = 0 ; i < ${#CONFIGSVR_HOSTS[@]} ; i++ )) ; do
     fi
 done
 
+echo "${CONFIGDB}"
 
 case $1 in
 
   start)
     pid_guard $PIDFILE $JOB_NAME
 
-    if [[ ! `ls ${LOG_DIR}/${JOB_NAME}` ]]
+    chmod 600 ${JOB_DIR}/config/security_key
+
+    if [[ ! `ls ${LOG_DIR}` ]]
     then
       echo "mongodb_shard init..."
 
       chmod 600 ${JOB_DIR}/config/security_key
       echo "start mongos."
-      mongos --configdb ${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf --chunkSize 1
+      #mongos --configdb ${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf --chunkSize 1
+      mongos --configdb configRepl/${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf 
 
       sleep 5
 
@@ -41,7 +45,8 @@ case $1 in
 
     else
       echo "start mongos."
-      mongos --configdb ${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf --chunkSize 1
+      #mongos --configdb ${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf --chunkSize 1
+      mongos --configdb configRepl/${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf
     fi
 
     ;;

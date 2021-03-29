@@ -4,4 +4,4 @@ name: mongodb
 dependencies:
 
 files:
-- mongodb/mongodb-linux-x86_64-3.0.6.tgz
+- mongodb/mongodb-linux-x86_64-4.0.23.tgz

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+chown -h vcap:vcap /var/vcap/packages/mongodb
+chown -h -R vcap:vcap /var/vcap/packages/mongodb/
+chmod -R 750 /var/vcap/packages/mongodb/bin/*
+
+echo "cce - chown vcap:vcap, chmod 750 - complete"

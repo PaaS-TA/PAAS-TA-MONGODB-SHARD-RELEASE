@@ -2,7 +2,9 @@
 name: mongodb_config
 templates:
   bin/createUser.js.erb: bin/createUser.js
+  bin/initReplSet.js.erb: bin/initReplSet.js
   bin/mongodb_config_ctl.erb: bin/mongodb_config_ctl
+  bin/post-start.erb: bin/post-start
   config/mongod_noAuth.conf.erb: config/mongod_noAuth.conf
   config/mongod_configsvr.conf.erb: config/mongod_configsvr.conf
   config/security_key.erb: config/security_key
@@ -26,3 +28,5 @@ properties:
   mongodb.port:
     description: 'mongodb port'
     default: 27017
+  configsvr_hosts:
+    description: 'config server hosts.'
