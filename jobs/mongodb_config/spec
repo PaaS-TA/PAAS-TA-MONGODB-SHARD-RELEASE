@@ -30,3 +30,6 @@ properties:
     default: 27017
   configsvr_hosts:
     description: 'config server hosts.'
+  cce_enable:
+    description: cce_mongodb_patch.
+    default: false

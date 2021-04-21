@@ -35,3 +35,6 @@ properties:
   mongodb.passwd:
     description: 'mongodb password'
     default: openpaas
+  cce_enable:
+    description: cce_mongodb_patch.
+    default: false

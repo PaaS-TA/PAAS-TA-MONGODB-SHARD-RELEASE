@@ -33,3 +33,6 @@ properties:
   mongodb.port:
     description: 'mongodb port'
     default: 27017
+  cce_enable:
+    description: cce_mongodb_patch.
+    default: false
