@@ -2,6 +2,7 @@
 name: mongodb_slave
 templates:
   bin/mongodb_slave_ctl: bin/mongodb_slave_ctl
+  bin/post-start.erb: bin/post-start
   config/mongod_repl.conf.erb: config/mongod_repl.conf
   config/security_key.erb: config/security_key
   data/properties.sh.erb: data/properties.sh
@@ -21,3 +22,6 @@ properties:
   mongodb.port:
     description: 'mongodb port'
     default: 27017
+  cce_enable:
+    description: cce_mongodb_patch.
+    default: false

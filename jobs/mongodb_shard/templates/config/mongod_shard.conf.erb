@@ -7,7 +7,7 @@ processManagement:
    fork: true
    pidFilePath: "/var/vcap/sys/run/mongodb_shard/mongodb_shard.pid"
 net:
-#   bindIp: <%= p('bindIp')%>
+#   bindIp: <%= p('mongodb.bindIp')%>
    bindIp: 0.0.0.0
    port: <%= p('mongodb.port')%>
 security:

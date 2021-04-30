@@ -36,6 +36,11 @@ case $1 in
       echo "start mongodb with auth."
       mongod --config ${JOB_DIR}/config/mongod_configsvr.conf
 
+      sleep 5
+     
+      echo "init replicaSet..."
+      mongo localhost:27017/admin --shell ${JOB_DIR}/bin/initReplSet.js
+
     else
       echo "mongodb_config already inited.. start mongodb with auth."
       mongod --config ${JOB_DIR}/config/mongod_configsvr.conf

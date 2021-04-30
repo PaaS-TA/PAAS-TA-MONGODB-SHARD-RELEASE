@@ -10,6 +10,8 @@ storage:
 processManagement:
    fork: true
    pidFilePath: "/var/vcap/sys/run/mongodb_master/mongodb_master.pid"
+sharding:
+    clusterRole: shardsvr
 net:
 #   bindIp: <%= p('mongodb.bindIp')%>
    bindIp: 0.0.0.0

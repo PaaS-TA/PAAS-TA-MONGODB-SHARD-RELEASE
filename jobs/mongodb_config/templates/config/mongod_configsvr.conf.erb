@@ -10,6 +10,10 @@ storage:
 processManagement:
    fork: true
    pidFilePath: "/var/vcap/sys/run/mongodb_config/mongodb_config.pid"
+sharding:
+  clusterRole: configsvr
+replication:
+  replSetName: configRepl
 net:
 #   bindIp: <%= p('mongodb.bindIp')%>
    bindIp: 0.0.0.0

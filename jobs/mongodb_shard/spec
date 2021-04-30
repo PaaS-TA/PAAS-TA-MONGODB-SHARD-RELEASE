@@ -1,8 +1,11 @@
 ---
 name: mongodb_shard
 templates:
+  bin/createUser.js.erb: bin/createUser.js
   bin/mongodb_shard_ctl.erb: bin/mongodb_shard_ctl
   bin/initShardSet.js.erb: bin/initShardSet.js
+  bin/post-start.erb: bin/post-start
+  config/mongod_noAuth.conf.erb: config/mongod_noAuth.conf
   config/mongod_shard.conf.erb: config/mongod_shard.conf
   config/security_key.erb: config/security_key
   data/properties.sh.erb: data/properties.sh
@@ -16,7 +19,7 @@ properties:
   mongodb.replSetName:
     description: 'Replica Set Name.'
     default: openpaas
-  bindIp:
+  mongodb.bindIp:
     description: 'The IP address that mongos or mongod binds to in order to listen for connections from applications.'
     default: 0.0.0.0
   mongodb.port:
@@ -32,3 +35,6 @@ properties:
   mongodb.passwd:
     description: 'mongodb password'
     default: openpaas
+  cce_enable:
+    description: cce_mongodb_patch.
+    default: false

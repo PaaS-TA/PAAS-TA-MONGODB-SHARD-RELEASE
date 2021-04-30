@@ -4,6 +4,7 @@ templates:
   bin/createUser.js.erb: bin/createUser.js
   bin/initReplSet.js.erb: bin/initReplSet.js
   bin/mongodb_master_ctl.erb: bin/mongodb_master_ctl
+  bin/post-start.erb: bin/post-start
   config/mongod_noAuth.conf.erb: config/mongod_noAuth.conf
   config/mongod_repl.conf.erb: config/mongod_repl.conf
   config/security_key.erb: config/security_key
@@ -32,3 +33,6 @@ properties:
   mongodb.port:
     description: 'mongodb port'
     default: 27017
+  cce_enable:
+    description: cce_mongodb_patch.
+    default: false
