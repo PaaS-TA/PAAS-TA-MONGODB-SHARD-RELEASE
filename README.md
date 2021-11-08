@@ -85,9 +85,28 @@
     $ git clone https://github.com/PaaS-TA/PAAS-TA-MONGODB-SHARD-RELEASE.git  
     $ cd PAAS-TA-MONGODB-SHARD-RELEASE  
     ```  
+  - Download & Copy "source files" into the src directory
+    ```
+    ## download source files
+    $ wget -O src.zip https://nextcloud.paas-ta.org/index.php/s/xmyidGWeiM9qXLb/download
+    
+    ## unzip download source files
+    $ unzip src.zip 
+    
+    ## final src directory
+    src  
+        ├── cli
+        │   └── cf-linux-amd64-6.10.0.tgz
+        ├── java7
+        │   └── jre-7u45-linux-x64.gz
+        ├── mongodb
+        │   └── mongodb-linux-x86_64-ubuntu1804-4.2.17.tgz
+        └── mongodb_broker
+            └── openpaas-cf-service-java-broker-mongodb.jar
+    ```
   - Create PaaS-TA MongoDB Shard Release  
     ```  
-    ## <VERSION> :: release version (e.g. 2.0.1)
+    ## <VERSION> :: release version (e.g. 2.1.1)
     ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/paasta-mongodb-shard-<VERSION>.tgz)
     $ bosh -e <bosh_name> create-release --name=paasta-mongodb-shard --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force
 
