@@ -1,8 +1,8 @@
 # abort script on any command that exits with a non zero value
 set -e
 
-tar -zxvf mongodb/mongodb-linux-x86_64-4.0.23.tgz
+tar -zxvf mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.17.tgz
 (
-    cp -a mongodb-linux-x86_64-4.0.23/* ${BOSH_INSTALL_TARGET}
+    cp -a mongodb-linux-x86_64-ubuntu1804-4.2.17/* ${BOSH_INSTALL_TARGET}
 )
 
