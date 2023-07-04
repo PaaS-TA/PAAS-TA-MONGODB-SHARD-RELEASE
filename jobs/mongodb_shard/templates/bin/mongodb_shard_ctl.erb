@@ -29,12 +29,12 @@ case $1 in
 
     chmod 600 ${JOB_DIR}/config/security_key
 
-    if [[ ! `ls ${LOG_DIR}` ]]
+    if [[ ! `ls ${STORE_DIR}` ]]
     then
       echo "mongodb_shard init..."
 
       chmod 600 ${JOB_DIR}/config/security_key
-      echo "start mongos."
+      echo "start mongos...if"
       #mongos --configdb ${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf --chunkSize 1
       mongos --configdb configRepl/${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf 
 
@@ -44,7 +44,7 @@ case $1 in
       mongo localhost:<%= p('mongodb.port')%>/admin --shell ${JOB_DIR}/bin/initShardSet.js
 
     else
-      echo "start mongos."
+      echo "start mongos...else"
       #mongos --configdb ${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf --chunkSize 1
       mongos --configdb configRepl/${CONFIGDB} --config ${JOB_DIR}/config/mongod_shard.conf
     fi

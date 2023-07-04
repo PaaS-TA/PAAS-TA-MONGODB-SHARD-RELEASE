@@ -4,6 +4,7 @@ templates:
   bin/createUser.js.erb: bin/createUser.js
   bin/mongodb_shard_ctl.erb: bin/mongodb_shard_ctl
   bin/initShardSet.js.erb: bin/initShardSet.js
+  bin/pre-start: bin/pre-start
   bin/post-start.erb: bin/post-start
   config/mongod_noAuth.conf.erb: config/mongod_noAuth.conf
   config/mongod_shard.conf.erb: config/mongod_shard.conf

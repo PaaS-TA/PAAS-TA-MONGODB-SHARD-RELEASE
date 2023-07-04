@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+if [ `dpkg -S libcrypto.so.1.1 | wc -l` -eq 0 ]; then
+#if [ ! -f  /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 ]; then
+   	echo 'dpkg -i /var/vcap/packages/mongodb/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb'
+	dpkg -i /var/vcap/packages/mongodb/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
+fi
