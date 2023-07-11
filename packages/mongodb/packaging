@@ -1,6 +1,8 @@
 # abort script on any command that exits with a non zero value
 set -e
 
+cp  mongodb/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb ${BOSH_INSTALL_TARGET}
+
 tar -zxvf mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.17.tgz
 (
     cp -a mongodb-linux-x86_64-ubuntu1804-4.2.17/* ${BOSH_INSTALL_TARGET}
